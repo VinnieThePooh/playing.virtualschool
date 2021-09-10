@@ -1,0 +1,16 @@
+{
+
+	"Network": {
+		"Udp": {
+			"ListeningPort": "2000",
+			"IpAddress": "setup it later",
+			"PollingInterval": "1000"
+		},
+		"Tcp": {
+
+		},
+		"Client": {
+			"Id": 1 
+		} 
+	}
+}
