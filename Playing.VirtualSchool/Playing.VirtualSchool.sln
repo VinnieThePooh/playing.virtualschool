@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSchool.ServerApp", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSchool.Common", "VIrtualSchool.Common\VirtualSchool.Common.csproj", "{EEAFF765-E044-4C2C-B0D8-792361A009DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSchool.ConsoleTests", "VirtualSchool.ConsoleTests\VirtualSchool.ConsoleTests.csproj", "{EBDFF53D-412B-4871-BDEF-A7A5C26D7386}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.VirtualSchool.BroadcastListener", "Test.VirtualSchool.BroadcastListener\Test.VirtualSchool.BroadcastListener.csproj", "{ACB2A0D2-2B7A-4CFE-B990-72F7BC5CD543}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{EEAFF765-E044-4C2C-B0D8-792361A009DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEAFF765-E044-4C2C-B0D8-792361A009DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEAFF765-E044-4C2C-B0D8-792361A009DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDFF53D-412B-4871-BDEF-A7A5C26D7386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDFF53D-412B-4871-BDEF-A7A5C26D7386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDFF53D-412B-4871-BDEF-A7A5C26D7386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDFF53D-412B-4871-BDEF-A7A5C26D7386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB2A0D2-2B7A-4CFE-B990-72F7BC5CD543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB2A0D2-2B7A-4CFE-B990-72F7BC5CD543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB2A0D2-2B7A-4CFE-B990-72F7BC5CD543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB2A0D2-2B7A-4CFE-B990-72F7BC5CD543}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Extensions.Configuration;
 
 namespace VirtualSchool.ClientApp
 {
@@ -6,7 +7,13 @@ namespace VirtualSchool.ClientApp
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			var options = new ConfigurationBuilder()
+				.SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+				.AddJsonFile("appsettings.json")
+				.Build();
+
+
+			
 		}
 	}
 }

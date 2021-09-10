@@ -5,22 +5,23 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace VirtualSchool.ClientApp.Network
+namespace VirtualSchool.Common.Network
 {
-	class ClientNetworkModule: IDisposable
+	public class UdpBroadcastingModule: IDisposable
 	{
 		private readonly UdpClient _client;
 		private CancellationTokenSource _cts;
 		private IPEndPoint _listeningEndPoint;
 
-		public ClientNetworkModule(int clientId, int listeningPort)
+		public event EventHandler<RawDataEventArgs> DataReceived;
+
+		public UdpBroadcastingModule(int listeningPort)
 		{
 			_client = new UdpClient(new IPEndPoint(IPAddress.Broadcast, listeningPort));
 			_client.EnableBroadcast = true;
-			ClientId = clientId;
 		}
 
-		public int ClientId { get; }
+		public bool IsListening => _cts != null;
 
 		public Task StartListening()
 		{
@@ -32,7 +33,7 @@ namespace VirtualSchool.ClientApp.Network
 			return  Task.Run(() => Listen(_cts.Token), _cts.Token);
 		}
 
-		public Task TaskStopListening()
+		public Task StopListening()
 		{
 			_cts?.Cancel();
 			_cts = null;
@@ -50,15 +51,16 @@ namespace VirtualSchool.ClientApp.Network
 
 		private void Listen(CancellationToken token)
 		{
-			Debug.WriteLine($"Client {ClientId} began listenning");
-
 			while (!token.IsCancellationRequested)
 			{
 				var bytes = _client.Receive(ref _listeningEndPoint);
-
+				OnDataReceived(bytes);
 			}
+		}
 
-			Debug.WriteLine($"Client {ClientId} stopped listenning");
+		protected virtual void OnDataReceived(byte[] bytes)
+		{
+			DataReceived?.Invoke(this, new RawDataEventArgs(bytes));
 		}
 
 		#endregion
