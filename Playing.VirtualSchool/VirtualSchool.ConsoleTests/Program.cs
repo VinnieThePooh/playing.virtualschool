@@ -11,6 +11,7 @@ namespace VirtualSchool.ConsoleTests
 		static void Main(string[] args)
 		{
 			TestBroadcasting();
+			Console.ReadLine();
 		}
 
 
@@ -19,15 +20,16 @@ namespace VirtualSchool.ConsoleTests
 		{
 			var listenerEndpoint = new IPEndPoint(IPAddress.Broadcast, NetworkDefaults.UdpBroadcastingPort);
 
-			var udpClient = new UdpClient(listenerEndpoint);
+			int outcomingPort = 2000;
+			var udpClient = new UdpClient(outcomingPort);
 			udpClient.EnableBroadcast = true;
 
-			var timer = new System.Timers.Timer(500);
+			var timer = new System.Timers.Timer(1000);
 			timer.Elapsed += (o, e) =>
 			{
 				var bytes = BitConverter.GetBytes((int) NetworkCommand.WhoIsIt);
 				udpClient.Send(bytes, bytes.Length, listenerEndpoint);
-				Console.Write($"Sent command: {NetworkCommand.WhoIsIt}.");
+				Console.WriteLine($"Sent command: {NetworkCommand.WhoIsIt}.");
 			};
 
 			Console.WriteLine( "Press enter to begin broadcasting");

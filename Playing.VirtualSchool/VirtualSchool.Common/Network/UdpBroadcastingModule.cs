@@ -17,7 +17,8 @@ namespace VirtualSchool.Common.Network
 
 		public UdpBroadcastingModule(int listeningPort)
 		{
-			_client = new UdpClient(new IPEndPoint(IPAddress.Broadcast, listeningPort));
+			_client = new UdpClient(listeningPort);
+			_listeningEndPoint = new IPEndPoint(IPAddress.Any, listeningPort);
 			_client.EnableBroadcast = true;
 		}
 

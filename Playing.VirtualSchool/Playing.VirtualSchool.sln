@@ -3,15 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSchool.ClientApp", "VirtualSchool.ClientApp\VirtualSchool.ClientApp.csproj", "{DC0D530A-8545-4AAE-8401-57381DC732FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualSchool.ClientApp", "VirtualSchool.ClientApp\VirtualSchool.ClientApp.csproj", "{DC0D530A-8545-4AAE-8401-57381DC732FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSchool.ServerApp", "VirtualSchool.ServerApp\VirtualSchool.ServerApp.csproj", "{066FA029-5BAE-497E-B0F6-AEB23241B91B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualSchool.ServerApp", "VirtualSchool.ServerApp\VirtualSchool.ServerApp.csproj", "{066FA029-5BAE-497E-B0F6-AEB23241B91B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSchool.Common", "VIrtualSchool.Common\VirtualSchool.Common.csproj", "{EEAFF765-E044-4C2C-B0D8-792361A009DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualSchool.Common", "VIrtualSchool.Common\VirtualSchool.Common.csproj", "{EEAFF765-E044-4C2C-B0D8-792361A009DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSchool.ConsoleTests", "VirtualSchool.ConsoleTests\VirtualSchool.ConsoleTests.csproj", "{EBDFF53D-412B-4871-BDEF-A7A5C26D7386}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualSchool.ConsoleTests", "VirtualSchool.ConsoleTests\VirtualSchool.ConsoleTests.csproj", "{EBDFF53D-412B-4871-BDEF-A7A5C26D7386}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.VirtualSchool.BroadcastListener", "Test.VirtualSchool.BroadcastListener\Test.VirtualSchool.BroadcastListener.csproj", "{ACB2A0D2-2B7A-4CFE-B990-72F7BC5CD543}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EBDFF53D-412B-4871-BDEF-A7A5C26D7386} = {EBDFF53D-412B-4871-BDEF-A7A5C26D7386}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

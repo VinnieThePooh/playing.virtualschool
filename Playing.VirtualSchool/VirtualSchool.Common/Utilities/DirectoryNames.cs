@@ -7,7 +7,7 @@
 		//конкретное занятие в конкретное время
 		public static string SessionPrefix = "Session";
 
-		//превифс под конкретного анонимного ученика
+		//префикс под конкретного анонимного ученика
 		public static string ScholarPrefix = "Scholar";
 
 		//директория с файлом задачи
