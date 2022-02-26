@@ -25,7 +25,8 @@ namespace VirtualSchool.BroadcastListener
 			var listener = new UdpBroadcastingModule(port);
 			listener.DataReceived += (o, e) =>
 			{
-				var command = e.Bytes.GetCommand();
+				//todo: проверять на передачу данных в пределах одного сетевого стека
+				var command = e.Bytes.GetCommand(true);
 				Console.WriteLine($"Received command: {command}");
 			};
 
